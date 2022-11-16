@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poogle</title>
+    <link rel="stylesheet" href="xss-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body{
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      i{
+        float: left;
+        color: white;
+        margin-top: 0.5%;
+        margin-left: 2%;
+        transition: transform .2s;
+      }
+      i:hover{
+        transform: scale(1.2);
+      }
+      h1{
+        font-family: "Courier New", Courier, monospace;
+        font-weight: lighter;
+        font-size: 3.5em;
+        margin-top: 5%;
+        margin-bottom: 15%;
+      }
+      #inp {
+        background-color: black;
+        border: 2px solid white;
+        border-radius: 1.875rem;
+        width: 30%;
+        height: 2em;;
+        font-size: 120%;
+        color: white;
+        font-weight: 400;
+        padding-left: 0.9375rem;
+        padding-right: 1.25rem;
+        outline: none;
+      }
+      #butt{
+        background-color: transparent;
+        border-color: transparent;
+        outline: none;
+        font-size: 120%;
+        color: white;
+        position: relative;
+        right: 2.75rem;
+        top: 0.0625rem;
+        cursor: pointer;
+      }
+      
+</style>
+<body>
+  <a href="/"><i class="fa fa-home" style="font-size:48px;"></i></a><br>
+    <h1>Poogle</h1>
+    <form action="/xss" method="POST">
+        <input id="inp" type="text" placeholder="How to train your drangon" name="q">
+        <input id="butt" type="submit" value=&#10132>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="landing-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+  body{
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding-top: 10%;
+}
+h3{
+  font-family: "Courier New", Courier, monospace;
+  font-weight: lighter;
+  font-size: 3.5em;
+  margin-bottom: 0.8em;
+}
+button{
+  padding: 0.5% 2% 0.5% 2%;
+  letter-spacing: 0.3em;
+  margin: 1.5%;
+  background-color: black;
+  color: white;
+  border: 0.2em solid white;
+  outline: none;
+}
+button:hover{
+  background-color: white;
+  color: black;
+  border: 0.2em solid white;
+  outline: none;
+}
+button:focus{
+  background-color: white;
+  color: black;
+  border: 0.2em solid white;
+  outline: none;
+} 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: White;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: PaleGreen;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+h2{
+  color: black;
+}
+#input,#page{
+  background-color: black;
+  border: none;
+}
+
+</style>
+<body>
+    <h3>Attack VECTORS</h3>
+    <div class="container">
+      <button onclick="func1()" >SSRF</button>
+      <button onclick="func2()" >Command Injection</button>
+      <button onclick="func3()" >XSS</button><br>
+      <form method="POST" action="/">
+        <div class="togg">
+          <label class="switch">
+            <input type="checkbox" id="on">
+            <span class="slider round"></span>
+          </label><br>
+          <input type="text" id="input" value="off" name="on">
+          <input type="text" id="page" value="" name="page">
+        </div>
+        <button>Submit</button>
+      </form>  
+    </div>
+<script>
+  $(document).ready(function(){
+			$("#on").on('change',function(){
+				if(this.checked)
+					$("#input").val("on");
+				else
+					$("#input").val("off");
+			});
+    });
+  function func1()
+  {
+    $("#page").val("1");
+  } 
+  function func2()
+  {
+    $("#page").val("2");
+  }
+  function func3()
+  {
+    $("#page").val("3");
+  }
+</script>
+</body>
+</html>
